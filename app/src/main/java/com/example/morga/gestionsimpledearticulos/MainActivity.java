@@ -88,7 +88,7 @@ public class MainActivity extends Activity {
     //******
     public void mostrarListadoConBotones (View v)
     {
-        Intent i = new Intent(this, ListaFiltradaActivity.class);
+        Intent i = new Intent(this, ListaConIconActivity.class);
 
         startActivityForResult(i, ACTIVITY_ICON);
 

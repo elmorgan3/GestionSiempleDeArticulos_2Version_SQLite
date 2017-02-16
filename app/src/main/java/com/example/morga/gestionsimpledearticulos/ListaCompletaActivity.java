@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ListView;
 
-
 public class ListaCompletaActivity extends ListActivity {
 
     private static int ACTIVITY_TASK_ADD = 1;
@@ -37,8 +36,7 @@ public class ListaCompletaActivity extends ListActivity {
             R.id.textViewEstoque };
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_completa);
 

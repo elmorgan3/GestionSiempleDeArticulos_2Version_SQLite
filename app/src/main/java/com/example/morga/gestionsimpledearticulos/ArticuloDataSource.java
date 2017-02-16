@@ -138,15 +138,45 @@ public class ArticuloDataSource {
         String[] args = new String[]{codi};
         Cursor cursor = dbR.rawQuery("SELECT * FROM articulos WHERE codigo=?", args);
 
-        if (cursor.moveToFirst())
-        {
+        if (cursor.moveToFirst()) {
             encontrado = true;
         }
-        else
-        {
+        else {
             encontrado = false;
         }
 
         return encontrado;
     }
+
+    //*****
+    //Funcion que suma uno al estoc de un producto
+    //*****
+    public void plusArticulo (long id, float estoque){
+        // Modifiquem els valors de las tasca amb clau primària "id"
+        ContentValues values = new ContentValues();
+
+        //Le sumo uno al estoc actual
+        values.put(ARTICULO_ESTOQUE, estoque+1);
+
+        dbW.update(TABLE_NAME,values, ARTICULO_ID + " = ?", new String[] { String.valueOf(id) });
+    }
+
+    //*****
+    //Funcion que suma uno al estoc de un producto
+    //*****
+    public void lessArticulo (long id, float estoque){
+        // Modifiquem els valors de las tasca amb clau primària "id"
+        ContentValues values = new ContentValues();
+
+        //Le sumo uno al estoc actual
+        values.put(ARTICULO_ESTOQUE, estoque-1);
+
+        dbW.update(TABLE_NAME,values, ARTICULO_ID + " = ?", new String[] { String.valueOf(id) });
+    }
+
+
+
+
+
+
 }

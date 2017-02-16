@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\morga\Desktop\Actividades_Android\GestionSimpleDeArticulos2Version\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c9649557905bf7a80fca9e0d54cbcb7662627860">
+        <dex dex="C:\Users\morga\Desktop\Actividades_Android\GestionSimpleDeArticulos2Version\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-25.1.1_6c28e388f7b38f2142694d015887988f9f7d7661\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\morga\Desktop\Actividades_Android\GestionSimpleDeArticulos2Version\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7bde4c34162092e0a77e7f12dc85ed77c484cf5c">
+        <dex dex="C:\Users\morga\Desktop\Actividades_Android\GestionSimpleDeArticulos2Version\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-25.1.1_7986d6d7dca8cdd20bd51678007a4c3901cc4eca\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\morga\Desktop\Actividades_Android\GestionSimpleDeArticulos2Version\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\morga\Desktop\Actividades_Android\GestionSimpleDeArticulos2Version\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.1.1_f7bc8287d162b653649b886169ae0be2c96ed531\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\morga\Desktop\Actividades_Android\GestionSimpleDeArticulos2Version\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0d191c1a09e4892d059e5ce749e4ad4e08129e35">
+        <dex dex="C:\Users\morga\Desktop\Actividades_Android\GestionSimpleDeArticulos2Version\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.1.1_5492a922a2dfa19f4be1e638a5566d27f79448a0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\morga\Desktop\Actividades_Android\GestionSimpleDeArticulos2Version\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c03bf57f358aa10d253f21989e93bcf6014b3b17">
+        <dex dex="C:\Users\morga\Desktop\Actividades_Android\GestionSimpleDeArticulos2Version\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.1.1_9fb24aef8e697b53b91dcebf285e017cfe212eb9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\morga\Desktop\Actividades_Android\GestionSimpleDeArticulos2Version\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0fb891e8f0cfba0513043a7bb357513d229ca2cd">
+        <dex dex="C:\Users\morga\Desktop\Actividades_Android\GestionSimpleDeArticulos2Version\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.1.1_e06e92cbd2163c534d4ac83c39f8c368270d0f62\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\morga\Desktop\Actividades_Android\GestionSimpleDeArticulos2Version\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="06e405bb7e5da73c0c7566d7e5b465bfa3ab490f">
+        <dex dex="C:\Users\morga\Desktop\Actividades_Android\GestionSimpleDeArticulos2Version\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_20558e0ceefdffb8a3aeda2841a7cfe255979ff5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\morga\Desktop\Actividades_Android\GestionSimpleDeArticulos2Version\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3e04ac8ca644ea7baddf6fdcf72e15c79e9df94a">
+        <dex dex="C:\Users\morga\Desktop\Actividades_Android\GestionSimpleDeArticulos2Version\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.1.1_bd0e0bc95babd90fae8a8be0fe6cd11d1a799785\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\morga\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.1.1\support-annotations-25.1.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b59b6ee8d6ecc03e672d253800430343493a6ed8">
+        <dex dex="C:\Users\morga\Desktop\Actividades_Android\GestionSimpleDeArticulos2Version\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.1.1_4df5bdf4f13bad9f40baf7c920afb2139287b8f0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\morga\Desktop\Actividades_Android\GestionSimpleDeArticulos2Version\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9444c34b97a074ac37b5ed893c56283bbf8e98ee">
+        <dex dex="C:\Users\morga\Desktop\Actividades_Android\GestionSimpleDeArticulos2Version\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_73228dde9c06935a532eb212ffd14ee602c07998\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\morga\Desktop\Actividades_Android\GestionSimpleDeArticulos2Version\app\build\intermediates\exploded-aar\com.android.support\design\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="cd7951e04cfb9a8bf008d544a478d9a8d8192d38">
+        <dex dex="C:\Users\morga\Desktop\Actividades_Android\GestionSimpleDeArticulos2Version\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-25.1.1_19ce1a8a9eea23479e5fe5b2bb1f919d3a8acb6c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\morga\Desktop\Actividades_Android\GestionSimpleDeArticulos2Version\app\build\intermediates\exploded-aar\com.android.support\transition\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="15b049fedbd8e3926bf99d9e45dfc9b2a1043bb9">
+        <dex dex="C:\Users\morga\Desktop\Actividades_Android\GestionSimpleDeArticulos2Version\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-transition-25.1.1_e07596fbd69a93cba1becc11b9b125e33dd721c2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\morga\Desktop\Actividades_Android\GestionSimpleDeArticulos2Version\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e2719c102dca3a7a5b02ce07f769362da6ddb4ab">
+        <dex dex="C:\Users\morga\Desktop\Actividades_Android\GestionSimpleDeArticulos2Version\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.1.1_48293bb45568c2d4abed9ebc304d2eba388bb4d5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\morga\Desktop\Actividades_Android\GestionSimpleDeArticulos2Version\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="02741d05d4b697fba5e279e9881aaa1da0ca7c7f">
+        <dex dex="C:\Users\morga\Desktop\Actividades_Android\GestionSimpleDeArticulos2Version\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.1.1_005a217adf4356c95b83d4b69916a7d47cfeeb41\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\morga\Desktop\Actividades_Android\GestionSimpleDeArticulos2Version\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ecb496cc08dd52551fc5ec6db3bc0632e95a89bb">
+        <dex dex="C:\Users\morga\Desktop\Actividades_Android\GestionSimpleDeArticulos2Version\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.1.1_1437a7cdd81f23a023a6365e3a46fce0ccd8b615\classes.dex" />
+    </item>
+
+</items>

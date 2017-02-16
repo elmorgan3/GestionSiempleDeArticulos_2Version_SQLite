@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">GestionSimpleDeArticulos</string>
+    <string name="title_activity_lista_con_icon">ListaConIconActivity</string>
 </resources>

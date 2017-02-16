@@ -3,28 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ff0000">
+    android:background="#ff1111">
 
     <LinearLayout
-        android:layout_width="41dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_weight="0.07">
+        android:layout_weight="0.07"
+        android:gravity="center">
 
-        <ImageButton
-            android:layout_width="wrap_content"
+        <ImageView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:srcCompat="@mipmap/ic_plus"
-            android:id="@+id/buttonPlus"
-            android:background="@android:color/transparent" />
+            android:id="@+id/buttonPlus" />
 
-        <ImageButton
-            android:layout_width="wrap_content"
+        <ImageView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:srcCompat="@mipmap/ic_less"
-            android:id="@+id/buttonLess"
-            android:layout_weight="1"
-            android:background="@android:color/transparent" />
+            android:id="@+id/buttonLess" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -100,7 +99,7 @@
                 android:text="TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textViewEstoc"
+                android:id="@+id/textViewEstoque"
                 android:layout_weight="1"
                 android:textSize="18sp" />
         </LinearLayout>

@@ -16,8 +16,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".ListaCompletaActivity" />
-        <activity android:name=".ListaFiltradaActivity"/>
-        <activity android:name=".CrearActivity"/>
+        <activity android:name=".ListaFiltradaActivity" />
+        <activity android:name=".CrearActivity" />
+        <activity
+            android:name=".ListaConIconActivity"
+            android:label="@string/title_activity_lista_con_icon"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
