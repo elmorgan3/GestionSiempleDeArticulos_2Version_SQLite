@@ -17,6 +17,9 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 
 public class ListaConIconActivity extends AppCompatActivity {
 
@@ -40,6 +43,8 @@ public class ListaConIconActivity extends AppCompatActivity {
             R.id.textViewDescripcion,
             R.id.textViewPvp,
             R.id.textViewEstoque };
+
+
 
 
 
@@ -183,27 +188,53 @@ public class ListaConIconActivity extends AppCompatActivity {
     //*****
     //Metodo para sumar un articulo al estoc del producto clicado
     //*****
-    public void plusArticulo(final int _id, final long estoque) {
-        bd.plusArticulo(_id, estoque);
+    public void plusArticulo(final int _id, final long estoque, final String codigo)
+    {
+        String fecha = obtenerFecha();
+        float cantidad = 1;
+        String tipo = "E";
+
+
+        bd.plusArticulo(_id, codigo, estoque, fecha, cantidad, tipo);
         refreshArticulos();
+
 
     }
 
     //*****
     //Metodo para restar un articulo al estoc del producto clicado
     //*****
-    public void lessArticulo(final int _id, final long estoque)
+    public void lessArticulo(final int _id, final long estoque, final String codigo)
     {
+        String fecha = obtenerFecha();
+        float cantidad = 1;
+        String tipo = "S";
+
         if (estoque <= 0)
         {
             Toast.makeText(ListaConIconActivity.this, "Estas al minimo del estoc", Toast.LENGTH_SHORT).show();
         }
         else
         {
-
-            bd.lessArticulo(_id, estoque);
+            bd.lessArticulo(_id, codigo, estoque, fecha, cantidad, tipo);
             refreshArticulos();
         }
+    }
+
+    //Metodo para obtener la fecha de hoy
+    public String obtenerFecha () {
+
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, 1);
+        SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+        System.out.println(cal.getTime());
+// Output "Wed Sep 26 14:23:28 EST 2012"
+
+        String formatted = format1.format(cal.getTime());
+        System.out.println(formatted);
+// Output "2012-09-26"
+
+        return formatted;
     }
 
 }
@@ -256,7 +287,9 @@ class adapterListaConIcon extends android.widget.SimpleCursorAdapter  {
 
                 //Aqui cojo los dos datos que necesito que son la id para identificarlo y el estoc actual para poder sumarlo restarlo
                 oArticuloIcon.plusArticulo((linia.getInt(linia.getColumnIndexOrThrow(ArticuloDataSource.ARTICULO_ID))),
-                        (linia.getInt(linia.getColumnIndexOrThrow(ArticuloDataSource.ARTICULO_ESTOQUE))));
+                        (linia.getInt(linia.getColumnIndexOrThrow(ArticuloDataSource.ARTICULO_ESTOQUE))),
+                        (linia.getString(linia.getColumnIndexOrThrow(ArticuloDataSource.ARTICULO_CODIGO))));
+
             }
         });
 
@@ -278,48 +311,12 @@ class adapterListaConIcon extends android.widget.SimpleCursorAdapter  {
 
                 //Aqui cojo los dos datos que necesito que son la id para identificarlo y el estoc actual para poder sumarlo o restarlo
                 oArticuloIcon.lessArticulo((linia.getInt(linia.getColumnIndexOrThrow(ArticuloDataSource.ARTICULO_ID))),
-                        (linia.getInt(linia.getColumnIndexOrThrow(ArticuloDataSource.ARTICULO_ESTOQUE))));
+                        (linia.getInt(linia.getColumnIndexOrThrow(ArticuloDataSource.ARTICULO_ESTOQUE))),
+                        (linia.getString(linia.getColumnIndexOrThrow(ArticuloDataSource.ARTICULO_CODIGO))));
             }
         });
 
         return view;
     }
 
-
-
-
-//    @Override
-//    public void onClick(View v) {
-//        switch (v.getId()) {
-//            case R.id.btnPlus:
-//                // Busco la ROW
-//                View row = (View) v.getParent();
-//                // Busco el ListView
-//                ListView lv = (ListView) row.getParent();
-//                // Busco quina posicio ocupa la Row dins de la ListView
-//                int position = lv.getPositionForView(row);
-//
-//                // Carrego la linia del cursor de la posició.
-//                Cursor linia = (Cursor) getItem(position);
-//
-//                oTodoListIcon.deleteTask(linia.getInt(linia.getColumnIndexOrThrow(ArticuloDataSource.TODOLIST_ID)));
-//                break;
-//
-//
-//            case R.id.btnLess:
-//                // Busco la ROW
-//                View row = (View) v.getParent();
-//                // Busco el ListView
-//                ListView lv = (ListView) row.getParent();
-//                // Busco quina posicio ocupa la Row dins de la ListView
-//                int position = lv.getPositionForView(row);
-//
-//                // Carrego la linia del cursor de la posició.
-//                Cursor linia = (Cursor) getItem(position);
-//
-//                oTodoListIcon.deleteTask(linia.getInt(linia.getColumnIndexOrThrow(ArticuloDataSource.TODOLIST_ID)));
-//                break;
-//
-//        }
-//    }
 }

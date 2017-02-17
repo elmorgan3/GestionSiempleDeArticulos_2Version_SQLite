@@ -171,27 +171,59 @@ public class ArticuloDataSource {
     //*****
     //Funcion que suma uno al estoc de un producto
     //*****
-    public void plusArticulo (long id, float estoque){
+    public void plusArticulo (long id, String codigo, float estoque, String  fecha, float cantidad, String tipo){
         // Modifiquem els valors de las tasca amb clau primària "id"
-        ContentValues values = new ContentValues();
+        ContentValues valuesArticulo = new ContentValues();
 
         //Le sumo uno al estoc actual
-        values.put(ARTICULO_ESTOQUE, estoque+1);
+        valuesArticulo.put(ARTICULO_ESTOQUE, estoque+1);
 
-        dbW.update(TABLE_ARTICULOS,values, ARTICULO_ID + " = ?", new String[] { String.valueOf(id) });
+        dbW.update(TABLE_ARTICULOS, valuesArticulo, ARTICULO_ID + " = ?", new String[] { String.valueOf(id) });
+
+
+
+        //Ponemos los valores que seran insertados en la bbdd
+        ContentValues valuesMovimiento = new ContentValues();
+
+        valuesMovimiento.put(MOVIMIENTO_CODIGO, codigo);
+        valuesMovimiento.put(MOVIMIENTO_DIA, fecha);
+        valuesMovimiento.put(MOVIMIENTO_CANTIDAD, cantidad);
+        valuesMovimiento.put(MOVIMIENTO_TIPO, tipo);
+
+
+
+        //Insertamos el Articulo
+        dbW.insert(TABLE_MOVIMIENTOS, null, valuesMovimiento);
+
+
     }
 
     //*****
     //Funcion que suma uno al estoc de un producto
     //*****
-    public void lessArticulo (long id, float estoque){
+    public void lessArticulo (long id, String codigo, float estoque, String  fecha, float cantidad, String tipo){
         // Modifiquem els valors de las tasca amb clau primària "id"
-        ContentValues values = new ContentValues();
+        ContentValues valuesArticulo = new ContentValues();
 
         //Le sumo uno al estoc actual
-        values.put(ARTICULO_ESTOQUE, estoque-1);
+        valuesArticulo.put(ARTICULO_ESTOQUE, estoque-1);
 
-        dbW.update(TABLE_ARTICULOS,values, ARTICULO_ID + " = ?", new String[] { String.valueOf(id) });
+        dbW.update(TABLE_ARTICULOS, valuesArticulo, ARTICULO_ID + " = ?", new String[] { String.valueOf(id) });
+
+
+
+        //Ponemos los valores que seran insertados en la bbdd
+        ContentValues valuesMovimiento = new ContentValues();
+
+        valuesMovimiento.put(MOVIMIENTO_CODIGO, codigo);
+        valuesMovimiento.put(MOVIMIENTO_DIA, fecha);
+        valuesMovimiento.put(MOVIMIENTO_CANTIDAD, cantidad);
+        valuesMovimiento.put(MOVIMIENTO_TIPO, tipo);
+
+
+
+        //Insertamos el Articulo
+        dbW.insert(TABLE_MOVIMIENTOS, null, valuesMovimiento);
     }
 
 

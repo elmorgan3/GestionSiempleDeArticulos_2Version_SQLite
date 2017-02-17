@@ -131,8 +131,14 @@ public class EntradaOSalidaActivity extends Activity {
 
         //La FECHA
         tv = (EditText) findViewById(R.id.editTextFecha);
+
+
         String fecha = tv.getText().toString();
 
+        if (!(isValidDate(fecha))){
+            MyDialog.showToast(this,"El formato de la FECHA, no es el correcto");
+            return;
+        }
 
         //La CANTIDAD
         tv = (EditText) findViewById(R.id.editTextCantidad);
@@ -189,30 +195,50 @@ public class EntradaOSalidaActivity extends Activity {
 
         finish();
 
-
-
-
-
     }
 
-public String obtenerFecha () {
+    //*****
+    //MEtodo para obtener el dia actual
+    //*****
+    public String obtenerFecha () {
 
-    Calendar cal = Calendar.getInstance();
-    cal.add(Calendar.DATE, 1);
-    SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
-    System.out.println(cal.getTime());
-// Output "Wed Sep 26 14:23:28 EST 2012"
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, 1);
+        SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+        System.out.println(cal.getTime());
+    // Output "Wed Sep 26 14:23:28 EST 2012"
 
-    String formatted = format1.format(cal.getTime());
-    System.out.println(formatted);
-// Output "2012-09-26"
+        String formatted = format1.format(cal.getTime());
+        System.out.println(formatted);
+    // Output "2012-09-26"
+
+          return formatted;
+    }
 
 
-//    Date fecha= null;
-//    SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-//    String format = formatter.format(fecha);
-      return formatted;
-}
+    //*****
+    //MEtodo para saber si una fecha es valida
+    //*****
+    public boolean isValidDate(String dateString) {
+
+        if (dateString == null || !dateString.matches("\\d{4}-[01]\\d-[0-3]\\d"))
+            return false;
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        df.setLenient(false);
+        try {
+            df.parse(dateString);
+            return true;
+        } catch (ParseException ex) {
+            return false;
+        }
+//        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+//        try {
+//            df.parse(dateString);
+//            return true;
+//        } catch (ParseException e) {
+//            return false;
+//        }
+    }
 
     //**********
     //Funcion CANCELAR
