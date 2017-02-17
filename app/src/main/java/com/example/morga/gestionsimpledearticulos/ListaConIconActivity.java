@@ -22,6 +22,7 @@ public class ListaConIconActivity extends AppCompatActivity {
 
     private static int ACTIVITY_TASK_ADD = 1;
     private static int ACTIVITY_TASK_UPDATE = 2;
+    private static int ACTIVITY_TASK_UPDATE_MOVE = 3;
 
     private ArticuloDataSource bd;
     private long idActual;
@@ -34,12 +35,14 @@ public class ListaConIconActivity extends AppCompatActivity {
             ArticuloDataSource.ARTICULO_DESCRIPCION,
             ArticuloDataSource.ARTICULO_PVP,
             ArticuloDataSource.ARTICULO_ESTOQUE };
-
     private static int[] to = new int[] {
             R.id.textViewCodigo,
             R.id.textViewDescripcion,
             R.id.textViewPvp,
             R.id.textViewEstoque };
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -138,9 +141,9 @@ public class ListaConIconActivity extends AppCompatActivity {
 
         idActual = id;
 
-        Intent i = new Intent (this, CrearActivity.class);
+        Intent i = new Intent (this, EntradaOSalidaActivity.class);
         i.putExtras(bundle);
-        startActivityForResult(i, ACTIVITY_TASK_UPDATE);
+        startActivityForResult(i, ACTIVITY_TASK_UPDATE_MOVE);
     }
 
     @Override
@@ -157,6 +160,13 @@ public class ListaConIconActivity extends AppCompatActivity {
                 refreshArticulos();
             }
         }
+
+        if (requestCode == ACTIVITY_TASK_UPDATE_MOVE) {
+            if (resultCode == RESULT_OK) {
+                refreshArticulos();
+            }
+        }
+
     }
 
 
@@ -190,6 +200,7 @@ public class ListaConIconActivity extends AppCompatActivity {
         }
         else
         {
+
             bd.lessArticulo(_id, estoque);
             refreshArticulos();
         }
@@ -265,7 +276,7 @@ class adapterListaConIcon extends android.widget.SimpleCursorAdapter  {
                 // Carrego la linia del cursor de la posició.
                 Cursor linia = (Cursor) getItem(position);
 
-                //Aqui cojo los dos datos que necesito que son la id para identificarlo y el estoc actual para poder sumarlo restarlo
+                //Aqui cojo los dos datos que necesito que son la id para identificarlo y el estoc actual para poder sumarlo o restarlo
                 oArticuloIcon.lessArticulo((linia.getInt(linia.getColumnIndexOrThrow(ArticuloDataSource.ARTICULO_ID))),
                         (linia.getInt(linia.getColumnIndexOrThrow(ArticuloDataSource.ARTICULO_ESTOQUE))));
             }

@@ -21,7 +21,9 @@
         <activity
             android:name=".ListaConIconActivity"
             android:label="@string/title_activity_lista_con_icon"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ListaMovimientosActivity" />
+        <activity android:name=".EntradaOSalidaActivity"></activity>
     </application>
 
 </manifest>

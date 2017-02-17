@@ -19,7 +19,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class CrearActivity extends Activity {
+public class CrearActivity extends AppCompatActivity {
     EditText etCodigo;
     EditText etDescripcion;
     EditText etPvp;
@@ -127,7 +127,7 @@ public class CrearActivity extends Activity {
         // Validem les dades
         TextView tv;
 
-        // La CODIGO no puede estar vacia
+        // El CODIGO no puede estar vacia
         tv = (TextView) findViewById(R.id.editTextCodigo);
 
         String codigo = tv.getText().toString();
@@ -189,7 +189,7 @@ public class CrearActivity extends Activity {
             //Compruebo si el codigo ya esta existe
             if ((bd.comprovarCodi(codigo)) == false)
             {
-                idArticulo = bd.insert(codigo, descripcion, pvp, estoque);
+                idArticulo = bd.insertArticulo(codigo, descripcion, pvp, estoque);
             }
             else
             {

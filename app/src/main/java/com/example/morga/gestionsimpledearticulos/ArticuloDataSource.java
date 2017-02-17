@@ -22,12 +22,20 @@ public class ArticuloDataSource {
     private SQLiteDatabase dbW, dbR;
     private MySQLiteHelper dbHelper;
 
-    public static final String TABLE_NAME = "articulos";
+    public static final String TABLE_ARTICULOS = "articulos";
     public static final String ARTICULO_ID = "_id";
     public static final String ARTICULO_CODIGO = "codigo";
     public static final String ARTICULO_DESCRIPCION = "descripcion";
     public static final String ARTICULO_PVP = "pvp";
     public static final String ARTICULO_ESTOQUE = "estoque";
+    
+
+    public static final String TABLE_MOVIMIENTOS = "movimientos";
+    public static final String MOVIMIENTO_ID = "_id";
+    public static final String MOVIMIENTO_CODIGO = "codigo";
+    public static final String MOVIMIENTO_DIA = "dia";
+    public static final String MOVIMIENTO_CANTIDAD = "cantidad";
+    public static final String MOVIMIENTO_TIPO = "tipo";
 
     //Constructor
     public ArticuloDataSource(Context context)
@@ -57,7 +65,7 @@ public class ArticuloDataSource {
     //Funcion para insertar un Articulo
     //*********
     //Creamos un nuevo articulo y devolbemos el id si lo necesitamos
-    public long insert (String codigo, String descripcion, float pvp, float estoque)
+    public long insertArticulo (String codigo, String descripcion, float pvp, float estoque)
     {
         //Ponemos los valores que seran insertados en la bbdd
         ContentValues values = new ContentValues();
@@ -65,11 +73,30 @@ public class ArticuloDataSource {
         values.put(ARTICULO_CODIGO, codigo);
         values.put(ARTICULO_DESCRIPCION, descripcion);
         values.put(ARTICULO_PVP, pvp);
-        values.put(ARTICULO_ESTOQUE,estoque);
+        values.put(ARTICULO_ESTOQUE, estoque);
+
+
 
         //Insertamos el Articulo
-        return dbW.insert(TABLE_NAME, null, values);
+        return dbW.insert(TABLE_ARTICULOS, null, values);
     }
+
+    public long insertMovimiento (String codigo, String fecha, float cantidad, String tipo)
+    {
+        //Ponemos los valores que seran insertados en la bbdd
+        ContentValues values = new ContentValues();
+
+        values.put(MOVIMIENTO_CODIGO, codigo);
+        values.put(MOVIMIENTO_DIA, fecha);
+        values.put(MOVIMIENTO_CANTIDAD, cantidad);
+        values.put(MOVIMIENTO_TIPO, tipo);
+
+
+
+        //Insertamos el Articulo
+        return dbW.insert(TABLE_MOVIMIENTOS, null, values);
+    }
+
 
     //*********
     //Funcion para actualizar un Articulo
@@ -84,8 +111,10 @@ public class ArticuloDataSource {
         values.put(ARTICULO_PVP,pvp);
         values.put(ARTICULO_ESTOQUE,estoque);
 
-        dbW.update(TABLE_NAME,values, ARTICULO_ID + " = ?", new String[] { String.valueOf(id) });
+        dbW.update(TABLE_ARTICULOS,values, ARTICULO_ID + " = ?", new String[] { String.valueOf(id) });
     }
+
+
 
     //*********
     //Funcion para eliminar un Articulo con la PK id
@@ -93,7 +122,7 @@ public class ArticuloDataSource {
     public void delete(long id)
     {
         // Eliminem la Articulo amb clau primària "id"
-        dbW.delete(TABLE_NAME, ARTICULO_ID + " = ?", new String[] { String.valueOf(id) });
+        dbW.delete(TABLE_ARTICULOS, ARTICULO_ID + " = ?", new String[] { String.valueOf(id) });
     }
 
 
@@ -103,7 +132,7 @@ public class ArticuloDataSource {
     //**********
     public Cursor getAllArticulos()
     {
-        return dbR.query(TABLE_NAME, new String[] {ARTICULO_ID, ARTICULO_CODIGO, ARTICULO_DESCRIPCION, ARTICULO_PVP, ARTICULO_ESTOQUE},
+        return dbR.query(TABLE_ARTICULOS, new String[] {ARTICULO_ID, ARTICULO_CODIGO, ARTICULO_DESCRIPCION, ARTICULO_PVP, ARTICULO_ESTOQUE},
                 null, null,null,null, ARTICULO_ID);
     }
 
@@ -114,20 +143,11 @@ public class ArticuloDataSource {
     {
         // Retorna un cursor només amb el id indicat
         // Retornem les tasques que el camp DONE = 1
-        return dbR.query(TABLE_NAME, new String[] { ARTICULO_ID, ARTICULO_CODIGO, ARTICULO_DESCRIPCION,ARTICULO_PVP, ARTICULO_ESTOQUE},
+        return dbR.query(TABLE_ARTICULOS, new String[] { ARTICULO_ID, ARTICULO_CODIGO, ARTICULO_DESCRIPCION,ARTICULO_PVP, ARTICULO_ESTOQUE},
                 ARTICULO_ID+ "=?", new String[]{String.valueOf(id)},
                 null, null, null);
 
     }
-
-
-
-//    public Cursor comprobarCodigo(String codigo){
-//            return dbR.query(TABLE_NAME, new String[] { "COUNT(*)"},
-//                    ARTICULO_CODIGO + "=?", new String[]{String.valueOf(codigo)},
-//                    null, null, null);
-//
-//    }
 
     //*********
     //Funcion que devuelve un boolean para saber si un codigo ya esxiste
@@ -158,7 +178,7 @@ public class ArticuloDataSource {
         //Le sumo uno al estoc actual
         values.put(ARTICULO_ESTOQUE, estoque+1);
 
-        dbW.update(TABLE_NAME,values, ARTICULO_ID + " = ?", new String[] { String.valueOf(id) });
+        dbW.update(TABLE_ARTICULOS,values, ARTICULO_ID + " = ?", new String[] { String.valueOf(id) });
     }
 
     //*****
@@ -171,12 +191,25 @@ public class ArticuloDataSource {
         //Le sumo uno al estoc actual
         values.put(ARTICULO_ESTOQUE, estoque-1);
 
-        dbW.update(TABLE_NAME,values, ARTICULO_ID + " = ?", new String[] { String.valueOf(id) });
+        dbW.update(TABLE_ARTICULOS,values, ARTICULO_ID + " = ?", new String[] { String.valueOf(id) });
     }
 
 
 
 
-
+    //*****
+    //*****
+    //Funciones para ENTRA Y SALIDA DE MOVIMIENTOS
+    //*****
+    //*****
+//    public Cursor NuevoMovimientoDeArticulo(long id)
+//    {
+//        // Retorna un cursor només amb el id indicat
+//        // Retornem les tasques que el camp DONE = 1
+//        return dbR.query(TABLE_MOVIMIENTOS, new String[] { MOVIMIENTO_ID, MOVIMIENTO_CODIGO, MOVIMIENTO_DIA ,MOVIMIENTO_CANTIDAD, MOVIMIENTO_TIPO},
+//                MOVIMIENTO_ID+ "=?", new String[]{String.valueOf(id)},
+//                null, null, null);
+//
+//    }
 
 }
