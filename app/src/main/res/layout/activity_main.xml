@@ -54,5 +54,6 @@
         android:text="Ver movimientos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/buttonMovimientos" />
+        android:id="@+id/buttonMovimientos"
+        android:onClick="mostrarListadoMovimientos" />
 </LinearLayout>

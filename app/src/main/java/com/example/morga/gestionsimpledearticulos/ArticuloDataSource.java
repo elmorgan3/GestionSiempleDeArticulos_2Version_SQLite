@@ -128,13 +128,45 @@ public class ArticuloDataSource {
 
 
     //**********
-    // Funciion que retorna todos los elementos la bbdd en un cursor
+    // Funciion que retorna todos los articulos de la bbdd en un cursor
     //**********
     public Cursor getAllArticulos()
     {
         return dbR.query(TABLE_ARTICULOS, new String[] {ARTICULO_ID, ARTICULO_CODIGO, ARTICULO_DESCRIPCION, ARTICULO_PVP, ARTICULO_ESTOQUE},
                 null, null,null,null, ARTICULO_ID);
     }
+
+    //**********
+    // Funciion que retorna todos los movimientos de la bbdd en un cursor
+    //**********
+    public Cursor getAllMovimientos()
+    {
+        return dbR.query(TABLE_MOVIMIENTOS, new String[] {MOVIMIENTO_ID, MOVIMIENTO_CODIGO, MOVIMIENTO_DIA, MOVIMIENTO_CANTIDAD, MOVIMIENTO_TIPO},
+                null, null,null,null, MOVIMIENTO_ID);
+    }
+
+    //busquem una row per la seu codi
+    public Cursor historicoCodigo(String codigo) {
+
+        // Retorna un cursor només amb el id indicat
+        return  dbR.query(TABLE_MOVIMIENTOS, new String[]{MOVIMIENTO_ID, MOVIMIENTO_CODIGO, MOVIMIENTO_DIA, MOVIMIENTO_CANTIDAD, MOVIMIENTO_TIPO},
+                MOVIMIENTO_CODIGO + "=?", new String[]{String.valueOf(codigo)},
+                null, null, null);
+
+        //
+    }
+    //busquem per la data!!!
+    public Cursor historicData(String codigo) {
+
+        // Retorna un cursor només amb el id indicat
+        return  dbR.query(TABLE_MOVIMIENTOS, new String[]{MOVIMIENTO_ID, MOVIMIENTO_CODIGO, MOVIMIENTO_DIA, MOVIMIENTO_CANTIDAD, MOVIMIENTO_TIPO},
+                MOVIMIENTO_CODIGO + "=?", new String[]{String.valueOf(codigo)},
+                null, null, null);
+
+        //
+    }
+
+
 
     //**********
     // Funciion que retorna solo el id pedido

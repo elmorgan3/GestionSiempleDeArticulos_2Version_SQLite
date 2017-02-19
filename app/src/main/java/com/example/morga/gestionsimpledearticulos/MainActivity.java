@@ -24,8 +24,9 @@ public class MainActivity extends Activity {
 
     private static final int ACTIVITY_SIMPLE = 0;
     private static final int ACTIVITY_FILTER = 1;
-    private static int ACTIVITY_TASK_ADD = 1;
-    private static int ACTIVITY_ICON = 2;
+    private static final int ACTIVITY_TASK_ADD = 1;
+    private static final int ACTIVITY_ICON = 2;
+    private static final int ACTIVITY_MOVIMIENTOS= 3;
 
     private long idActual;
 
@@ -33,7 +34,7 @@ public class MainActivity extends Activity {
     Button btnListadoFiltro;
     Button btnCrear;
     Button btnListadoConBotones;
-
+    Button btnMovimientos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +45,7 @@ public class MainActivity extends Activity {
         btnListadoFiltro = (Button) findViewById(R.id.buttonListadoFiltrado);
         btnCrear = (Button)findViewById(R.id.buttonCrearArticulo);
         btnListadoConBotones = (Button)findViewById(R.id.buttonListadoConBotones);
+        btnMovimientos = (Button)findViewById(R.id.buttonMovimientos);
     }
 
     //******
@@ -92,6 +94,17 @@ public class MainActivity extends Activity {
         Intent i = new Intent(this, ListaConIconActivity.class);
 
         startActivityForResult(i, ACTIVITY_ICON);
+
+    }
+
+    //******
+    //Metodo para abrir la activity con el listado completo con iconos
+    //******
+    public void mostrarListadoMovimientos (View v)
+    {
+        Intent i = new Intent(this, ListaMovimientosActivity.class);
+
+        startActivityForResult(i, ACTIVITY_MOVIMIENTOS);
 
     }
 
