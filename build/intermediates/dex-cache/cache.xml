@@ -61,7 +61,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="888e11a39f6da7ba840f2562361a2dd6001a772b">
+        sha1="fa18f2233b99403a0aa69971d9c7752c51308975">
         <dex dex="C:\Users\morga\Desktop\Actividades_Android\GestionSimpleDeArticulos2Version\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_20558e0ceefdffb8a3aeda2841a7cfe255979ff5\classes.dex" />
     </item>
     <item
@@ -88,7 +88,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="0433b2e0662e437e3c68d3c3caf76fa1169bcc8f">
+        sha1="08fe5b5b91002e78748ea338bc0d962a9c8ef84c">
         <dex dex="C:\Users\morga\Desktop\Actividades_Android\GestionSimpleDeArticulos2Version\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_73228dde9c06935a532eb212ffd14ee602c07998\classes.dex" />
     </item>
     <item

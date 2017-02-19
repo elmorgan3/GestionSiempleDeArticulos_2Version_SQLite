@@ -231,13 +231,7 @@ public class EntradaOSalidaActivity extends Activity {
         } catch (ParseException ex) {
             return false;
         }
-//        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-//        try {
-//            df.parse(dateString);
-//            return true;
-//        } catch (ParseException e) {
-//            return false;
-//        }
+
     }
 
     //**********
